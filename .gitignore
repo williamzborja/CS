@@ -1,0 +1,7 @@
+# Data Structures and Algorithms
+build
+bin
+index
+vcpkg_installed
+.DS_Store
+.idea
