@@ -1,0 +1,41 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug Tests",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/tests/tests",
+      "args": [],
+      "cwd": "${workspaceFolder}",
+      "preLaunchTask": "build tests",
+      "MIMode": "lldb",
+      "stopAtEntry": false,
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for LLDB",
+          "text": "settings set target.prefer-dynamic-value run-target",
+          "ignoreFailures": true
+        }
+      ]
+    },
+    {
+      "name": "Debug Main",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/dsa",
+      "args": [],
+      "cwd": "${workspaceFolder}",
+      "preLaunchTask": "build all",
+      "MIMode": "lldb",
+      "stopAtEntry": false,
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for LLDB",
+          "text": "settings set target.prefer-dynamic-value run-target",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ]
+}

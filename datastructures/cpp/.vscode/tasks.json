@@ -1,0 +1,30 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "cmake configure",
+      "type": "shell",
+      "command": "cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug",
+      "problemMatcher": []
+    },
+    {
+      "label": "build all",
+      "type": "shell",
+      "dependsOn": "cmake configure",
+      "command": "cmake --build build --config Debug",
+      "problemMatcher": []
+    },
+    {
+      "label": "build tests",
+      "type": "shell",
+      "command": "cmake --build build --config Debug --target tests",
+      "problemMatcher": []
+    },
+    {
+      "label": "run tests",
+      "type": "shell",
+      "command": "ctest --test-dir build --output-on-failure",
+      "problemMatcher": []
+    }
+  ]
+}
